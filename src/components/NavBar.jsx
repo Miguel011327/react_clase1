@@ -3,7 +3,11 @@ export const NavBar = () => {
     <>
       <div className="navbar bg-base-100 shadow-sm">
         <div className="flex-none">
-          <button className="btn btn-square btn-ghost">
+          <button
+            className="btn btn-square btn-ghost"
+            popoverTarget="popover-1"
+            style={{ anchorName: "--anchor-1" } /* as React.CSSProperties */}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -19,6 +23,24 @@ export const NavBar = () => {
               ></path>{" "}
             </svg>
           </button>
+          <ul
+            className="dropdown menu w-52 rounded-box bg-base-100 shadow-sm"
+            popover="auto"
+            id="popover-1"
+            style={
+              { positionAnchor: "--anchor-1" } /* as React.CSSProperties */
+            }
+          >
+            <li>
+              <a href="#">Proyectos</a>
+            </li>
+            <li>
+              <a href="#">Contacto</a>
+            </li>
+            <li>
+              <a href="#">Educación</a>
+            </li>
+          </ul>
         </div>
         <div className="flex-1">
           <a className="btn btn-ghost text-xl">Miguelon</a>
